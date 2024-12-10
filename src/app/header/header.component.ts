@@ -12,15 +12,13 @@ import { FormsModule } from '@angular/forms';
 export class HeaderComponent {
   @Input() subjectName: string = '';
   @Input() subjectImage: string = '';
-  isDarkMode = false;
+  public isDarkMode = false;
 
   ngOnInit(): void {
-    // Apply the correct theme on component load based on the stored state
     this.applyTheme();
   }
 
-  // Method to apply the theme based on the checkbox value
-  applyTheme() {
+  private applyTheme() {
     if (this.isDarkMode) {
       document.body.classList.add('dark-mode');
     } else {
@@ -28,8 +26,7 @@ export class HeaderComponent {
     }
   }
 
-  // Watch for changes to the theme and apply them
-  toggleTheme() {
+  public toggleTheme() {
     this.applyTheme();
   }
 }
