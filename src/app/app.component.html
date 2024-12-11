@@ -1,2 +1,10 @@
-<app-start-menu *ngIf="!subjectSelected" (subjectSelected)="onSubjectSelected($event)"></app-start-menu>
-<app-questions-container *ngIf="subjectSelected" [subject]="subjectSelected"></app-questions-container>
+<app-start-menu
+  @if
+  (!subjectSelected)
+  {
+  (subjectSelected)="onSubjectSelected($event)"
+  }
+></app-start-menu>
+
+<app-questions-container *ngIf="subjectSelected" [subject]="subjectSelected">
+</app-questions-container>
