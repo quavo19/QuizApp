@@ -21,9 +21,9 @@ import { ScorePageComponent } from './score-page/score-page.component';
 export class AppComponent {
   title = 'quiz-application';
 
-  subjectSelected: string = ''; // Holds the selected subject
+  subjectSelected: string = '';
 
   onSubjectSelected(subject: string) {
-    this.subjectSelected = subject; // Set the selected subject
+    this.subjectSelected = subject;
   }
 }
