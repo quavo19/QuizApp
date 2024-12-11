@@ -1,0 +1,14 @@
+<app-start-menu
+  @if
+  (!subjectSelected)
+  {
+  (subjectSelected)="onSubjectSelected($event)"
+  }
+></app-start-menu>
+<app-questions-container
+  @if
+  (subjectSelected)
+  {
+  [subject]="subjectSelected"
+  }
+></app-questions-container>
