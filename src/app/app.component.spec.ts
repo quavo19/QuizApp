@@ -40,9 +40,8 @@ describe('AppComponent', () => {
   });
 
   it('should update the subjectSelected when onSubjectSelected is called', () => {
-    const subject = 'HTML';
-    component.onSubjectSelected(subject);
-    expect(component.subjectSelected).toBe(subject);
+    component.onSubjectSelected('HTML');
+    expect(component.subjectSelected).toBe('HTML');
   });
 
   it('should display the subject selected in the HTML', () => {
