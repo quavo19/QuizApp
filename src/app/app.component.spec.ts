@@ -13,22 +13,20 @@ describe('AppComponent', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       imports: [
-        AppComponent,  // Use AppComponent as an imported standalone component
+        AppComponent,
         StartMenuComponent,
         QuestionsContainerComponent,
         ScorePageComponent,
         CommonModule,
-        HttpClientModule
+        HttpClientModule,
       ],
-      // Mock any necessary services if needed
-      providers: []
+      providers: [],
     }).compileComponents();
 
     fixture = TestBed.createComponent(AppComponent);
     component = fixture.componentInstance;
   });
 
-  // Test 1: Component creation and initial state
   it('should create the app component', () => {
     expect(component).toBeTruthy();
   });
@@ -41,20 +39,22 @@ describe('AppComponent', () => {
     expect(component.subjectSelected).toBe('');
   });
 
-  // Test 2: Testing the onSubjectSelected method
   it('should update the subjectSelected when onSubjectSelected is called', () => {
     const subject = 'HTML';
     component.onSubjectSelected(subject);
     expect(component.subjectSelected).toBe(subject);
   });
 
-  // Test 3: Testing the interaction with the HTML template
   it('should display the subject selected in the HTML', () => {
-    component.subjectSelected = 'HTML';  // Set a subject
-    fixture.detectChanges();  // Trigger change detection to update the view
+    component.subjectSelected = 'HTML';
+    fixture.detectChanges();
 
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('h1')?.textContent).toContain('quiz-application');
-    expect(compiled.querySelector('.subject-selected')?.textContent).toContain('HTML');
+    expect(compiled.querySelector('h1')?.textContent).toContain(
+      'quiz-application'
+    );
+    expect(compiled.querySelector('.subject-selected')?.textContent).toContain(
+      'HTML'
+    );
   });
 });
